@@ -1,5 +1,14 @@
-<section id="comments" data-channel="comments" data-message-id="<%= message.id %>">
-  <%= render message.comments %>
-</section>
-
 <%= render 'comments/new', message: message %>
+
+<script>
+$(document).on('keydown', '#comment_content', function(event){
+  if (event.keyCode == 13 && event.shiftKey == 0) {
+    event.preventDefault();
+    $('#submit_comment').click();
+  }
+})
+</script>
+
+<section id="comments" data-channel="comments" data-message-id="<%= message.id %>">
+  <%= render message.comments.reverse %>
+</section>
