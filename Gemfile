@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+  gem 'byebug'
+end
+
 gem 'rails', '~> 5.0.0'
 
 gem 'sqlite3'
@@ -13,10 +17,6 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.0'
-
-group :development, :test do
-  gem 'byebug'
-end
 
 group :development do
   gem 'web-console'
